@@ -1,0 +1,23 @@
+h2 {
+  background-color: lightpink;
+}
+.exItem {
+  width: 90vw;
+  background-color: darkolivegreen;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 2px 2px 2px wheat;
+  margin-bottom: 8px;
+}
+.item-price {
+  background-color: burlywood;
+  padding: 5px;
+  border: 3px solid rgb(221, 16, 248);
+  border-radius: 5px;
+  color: blueviolet;
+  font-weight: bold;
+}
