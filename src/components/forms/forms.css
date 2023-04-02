@@ -2,6 +2,7 @@
     align-items: center;
     margin: auto;
    
+   
 }
 h3{
     border: 3px solid lawngreen;
@@ -16,10 +17,11 @@ h3{
 }
 .forms{
     background-color: rgb(12, 24, 1);
+    border-radius: 10px;
     padding: 5px;
     display: flex;
     /* flex-direction: row; */
-    height: 30vh;
+    /* height: 30vh; */
     align-items: center;
     justify-content:center;
     margin-bottom: 5%;
@@ -32,8 +34,8 @@ h3{
     width: 40%;
    border-radius: 5px;
 }
-.forms 
-button{
-   margin-left: 23%;
+ 
+input[type='submit']{
+   margin-left: 2%;
    background-color:hotpink;
 }

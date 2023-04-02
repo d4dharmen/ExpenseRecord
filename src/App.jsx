@@ -1,31 +1,50 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import "./App.css";
 import ExpencesItem from "./components/ExpenceItem";
 import Forms from "./components/forms/Forms";
 
-
+const dummyData = [
+  {
+    part: "car expences",
+    cost: "300",
+    date: new Date().toString,
+    id: Math.random().toString(),
+  },
+  {
+    part: "car expences",
+    cost: "1000",
+    date: new Date().toString,
+    id: Math.random().toString(),
+  },
+];
 function App() {
-  // defining variable
-  const part0 = "car expenses";
-  const cst0 = "$ 3000";
-  
+  //retrived data from form fields
+  const [finalData, setFinalData] = useState(dummyData);
+  const funcToForm = (dataFrmForm) => {
+    const dataWithId = {
+      ...dataFrmForm,
+      //added id property in retrieved data.
+      id: Math.random().toString(),
+      
+    };
+    setFinalData(dataWithId);
+    console.log(dataWithId);
+    // const updatedData = [dataWithId, ...dummyData]
+  };
+  console.log(finalData);
 
-  const part1 = "household";
-  const cst1 = "$ 20000";
-  
-
-  const part2 = "education";
-  const cst2 = "$ 10000";
-  
-// returning or calling htms items in form of jsx
+  // returning or calling htms items in form of jsx
   return (
     <div className="App">
       <div>
-        <Forms/>
+        <Forms funcFromApp={funcToForm} />
       </div>
-      <ExpencesItem   particulars={ part0 } cost={ cst0 } />
-      <ExpencesItem   particulars={ part1 } cost={ cst1 } />
-      <ExpencesItem   particulars={ part2 } cost={ cst2 } />
+{
+  finalData.map(item => (
+
+    <ExpencesItem particulars={item.part} cost={item.cost} date={item.date} />
+  ))
+}
     </div>
   );
 }
