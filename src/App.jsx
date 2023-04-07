@@ -1,50 +1,23 @@
 import React, { useState } from "react";
 import "./App.css";
-import ExpencesItem from "./components/ExpenceItem";
-import Forms from "./components/forms/Forms";
 
-const dummyData = [
-  {
-    part: "car expences",
-    cost: "300",
-    date: new Date().toString,
-    id: Math.random().toString(),
-  },
-  {
-    part: "car expences",
-    cost: "1000",
-    date: new Date().toString,
-    id: Math.random().toString(),
-  },
-];
+// imported components
+import { ItemExpenses } from "./components/itemExpense/ItemExpense";
+import { NewExpenseForm } from "./components/NewExpenseForm/NewExpenseForm";
+import DUMMY_DATA from "./offlineData/offlineData.jsx";
+
 function App() {
-  //retrived data from form fields
-  const [finalData, setFinalData] = useState(dummyData);
-  const funcToForm = (dataFrmForm) => {
-    const dataWithId = {
-      ...dataFrmForm,
-      //added id property in retrieved data.
-      id: Math.random().toString(),
-      
-    };
-    setFinalData(dataWithId);
-    console.log(dataWithId);
-    // const updatedData = [dataWithId, ...dummyData]
-  };
-  console.log(finalData);
+  const [data, setData] = useState(DUMMY_DATA);
+  // retrieving data filled in expense forms
+  function inputDataCall(inutDataFromForm) {
+    setData([inutDataFromForm, ...data]);
+  }
 
-  // returning or calling htms items in form of jsx
   return (
     <div className="App">
-      <div>
-        <Forms funcFromApp={funcToForm} />
-      </div>
-{
-  finalData.map(item => (
+      <NewExpenseForm data={inputDataCall} />
 
-    <ExpencesItem particulars={item.part} cost={item.cost} date={item.date} />
-  ))
-}
+      <ItemExpenses data={data} />
     </div>
   );
 }

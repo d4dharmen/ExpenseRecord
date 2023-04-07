@@ -1,0 +1,17 @@
+.inputTitle {
+  color: rgb(255, 255, 255);
+}
+.formDiv {
+  width: 80vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 5%;
+  margin-top: 1%;
+}
+div input {
+  font-size: 1rem;
+  border-radius: 3px;
+  margin: 0px 45px;
+}
