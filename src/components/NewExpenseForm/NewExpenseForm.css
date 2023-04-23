@@ -14,4 +14,14 @@ div input {
   font-size: 1rem;
   border-radius: 3px;
   margin: 0px 45px;
+  background-color: rgb(175, 189, 189);
+}
+input[type="submit"] {
+  background-image: linear-gradient(yellow, orangered);
+  color: greenyellow;
+  border-radius: 10px;
+  padding: 5px 15px;
+}
+input[type="submit"]:hover {
+  background-image: linear-gradient(orangered, orange);
 }

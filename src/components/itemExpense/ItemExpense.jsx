@@ -7,7 +7,7 @@ export function ItemExpenses(props) {
         <div className="expenseDiv">
           <span className="date">{itm.date}</span>
           <span className="expense">{itm.expense}</span>
-          <span className="amount">$ {itm.amount}</span>
+          <span className="amount">Rs. {itm.amount}</span>
         </div>
       ))}
     </>
